@@ -33,5 +33,6 @@ module CPU(
     DataMemory DM();
     InstructionMemory IM();
     ProgramCounter PCModule();
+    GeneralPurposeRegisters GPR();
 
 endmodule

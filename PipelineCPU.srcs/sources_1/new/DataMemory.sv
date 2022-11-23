@@ -34,6 +34,12 @@ module DataMemory(
 
     assign readResult = readEnabled ? memory[address[12:2]] : 0;
 
+    initial
+    begin
+        for(int i = 0; i < 2048; i++)
+            memory[i] <= 0;
+    end
+
     always_ff @(posedge system.clock) 
     begin
         if(system.reset)
