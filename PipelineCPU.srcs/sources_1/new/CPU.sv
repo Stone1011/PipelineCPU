@@ -19,12 +19,19 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "Settings.vh"
+
 module CPU(
     input clock,
     input reset
     );
 
+    SystemSignal system;
+    assign system.reset = reset;
+    assign system.clock = clock;
+
     DataMemory DM();
     InstructionMemory IM();
+    ProgramCounter PCModule();
 
 endmodule
