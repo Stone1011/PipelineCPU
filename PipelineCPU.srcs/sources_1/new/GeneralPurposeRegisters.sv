@@ -32,13 +32,13 @@ module GeneralPurposeRegisters(
     output int readResultB
     );
 
+    int GPR [31:0];
+    
     function RESET;
     ;
         for(int i = 0; i < 32; i++)
             GPR[i] <= 0;
     endfunction
-
-    int GPR [31:0];
 
     initial
     begin

@@ -23,16 +23,22 @@
 
 module InstructionMemory(
     input int address,
-    output Vec32 instruction
+    output Instruction instruction
     );
 
     Vec32 memory [1023:0];
 
     initial
     begin
-        $readmemh("C:\\CPU\\mips1.txt", data);
+        $readmemh("C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\demo0.txt", memory);
     end
 
-    assign instruction = memory[address[11:2]];
+    assign instruction.instructionCode = InstructionCode_t'(memory[address[11:2]]);
+    assign instruction.rs = memory[address[11:2]][25:21];
+    assign instruction.rt = memory[address[11:2]][20:16];
+    assign instruction.rd = memory[address[11:2]][15:11];
+    assign instruction.imm16 = memory[address[11:2]][15:0];
+    assign instruction.imm26 = memory[address[11:2]][25:0];
+    assign instruction.funct = memory[address[11:2]][5:0];
 
 endmodule

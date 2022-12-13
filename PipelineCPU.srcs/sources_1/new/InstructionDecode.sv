@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2022/11/24 01:07:14
+// Create Date: 2022/12/14 00:07:44
 // Design Name: 
-// Module Name: CPU
+// Module Name: InstructionDecode
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,21 +19,15 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "Settings.vh"
 
-module CPU(
-    input clock,
-    input reset
+module InstructionDecode(
+    input SystemSignal system,
+    input logic stall,
+    
+    input IF_ID_Reg IF_ID_Result,
+    output ID_EX_Reg ID_EX_Result
     );
 
-    SystemSignal system;
-    assign system.reset = reset;
-    assign system.clock = clock;
-
-    DataMemory DM();
-    InstructionFetch IF();
-    InstructionDecode ID();
-    GeneralPurposeRegisters GPR();
-    ArithmaticLogicUnit ALU();
+    
 
 endmodule

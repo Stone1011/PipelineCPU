@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2022/11/24 01:07:14
+// Create Date: 2022/12/13 16:32:08
 // Design Name: 
-// Module Name: CPU
+// Module Name: Mux4
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -21,19 +21,25 @@
 
 `include "Settings.vh"
 
-module CPU(
-    input clock,
-    input reset
+module Mux4(
+    input int A0,
+    input int A1,
+    input int A2,
+    input int A3,
+    input Vec2 choice,
+    output int result
     );
 
-    SystemSignal system;
-    assign system.reset = reset;
-    assign system.clock = clock;
-
-    DataMemory DM();
-    InstructionFetch IF();
-    InstructionDecode ID();
-    GeneralPurposeRegisters GPR();
-    ArithmaticLogicUnit ALU();
+    always_comb
+    begin
+        if(choice == 2'b00)
+            result = A0;
+        else if(choice == 2'b01)
+            result = A1;
+        else if(choice == 2'b10)
+            result = A2;
+        else
+            result = A3;
+    end
 
 endmodule
