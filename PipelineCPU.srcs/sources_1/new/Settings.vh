@@ -66,7 +66,7 @@ typedef enum Vec3
     signExtOfImm = 3'b001,
     leftShiftOfImm = 3'b010,
     zeroExtOfImm = 3'b011,
-    otherAlu = 3'b100,
+    otherAlu = 3'b100
 } ALUSrc_t;
 
 typedef enum Vec2 
@@ -114,9 +114,29 @@ typedef struct packed {
 typedef struct packed {
     int pcValue;
     Instruction instruction;
+    ControlSignal signal;
     Vec5 regReadA;
     Vec5 regReadB;
     Vec5 regWrite;
 } ID_EX_Reg;
+
+typedef struct packed {
+    int pcValue;
+    Instruction instruction;
+    ControlSignal signal;
+    Vec5 regWrite;
+    int aluResult;
+    logic aluOverflow;
+} EX_MEM_Reg;
+
+typedef struct packed {
+    int pcValue;
+    Instruction instruction;
+    ControlSignal signal;
+    Vec5 regWrite;
+    int aluResult;
+    logic aluOverflow;
+    int memReadData;
+} MEM_WB_Reg;
 
 `endif
