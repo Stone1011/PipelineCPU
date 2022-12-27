@@ -29,7 +29,7 @@ module ControllerUnit(
 
     always_comb 
     begin
-        case(instruction.instructionCode)
+        casex(instruction.instructionCode)
             nop:
             begin
                 signal.regWriteDst = otherDst;
@@ -162,6 +162,7 @@ module ControllerUnit(
             end
             default:
             begin
+                $stop;
                 signal.regWriteDst = otherDst;
                 signal.regWriteSrc = zeroRegWrite;
                 signal.aluSrc = otherAlu;

@@ -26,6 +26,7 @@ module Execution(
     input ID_EX_Reg ID_EX_Result,
     input int regReadDataA,
     input int regReadDataB,
+    input logic stall,
 
     output EX_MEM_Reg EX_MEM_Result
     );
@@ -36,11 +37,6 @@ module Execution(
         .in(ID_EX_Result.instruction.imm16),
         .out(signExtOfImm)
     );
-
-    assign EX_MEM_Result.pcValue = ID_EX_Result.pcValue;
-    assign EX_MEM_Result.signal = ID_EX_Result.signal;
-    assign EX_MEM_Result.instruction = ID_EX_Result.instruction;
-    assign EX_MEM_Result.regWrite = ID_EX_Result.regWrite;
 
     int AluOprandA, AluOprandB;
     assign AluOprandA = regReadDataA;
@@ -57,12 +53,48 @@ module Execution(
     end
 
     // TODO: Implement ALU module wiring
+    int aluResult;
+    logic aluOverflow;
     ArithmaticLogicUnit ALU(
         .A(AluOprandA),
         .B(AluOprandB),
         .Op(ID_EX_Result.signal.aluOp),
-        .C(EX_MEM_Result.aluResult),
-        .Over(EX_MEM_Result.aluOverflow)
+        .C(aluResult),
+        .Over(aluOverflow)
     );
+
+    always_ff @(posedge system.clock)
+    begin
+        if(system.reset)
+        begin
+            EX_MEM_Result.pcValue <= 32'h3000;
+            EX_MEM_Result.instruction <= `reset_Instruction;
+            EX_MEM_Result.signal <= `reset_ControlSignal;
+            EX_MEM_Result.regWrite <= 0;
+            EX_MEM_Result.aluResult <= 0;
+            EX_MEM_Result.aluOverflow <= 0;
+            EX_MEM_Result.regReadDataB <= 0;
+        end
+        else if(stall)
+        begin
+            EX_MEM_Result.pcValue <= EX_MEM_Result.pcValue;
+            EX_MEM_Result.instruction <= EX_MEM_Result.instruction;
+            EX_MEM_Result.signal <= EX_MEM_Result.signal;
+            EX_MEM_Result.regWrite <= EX_MEM_Result.regWrite;
+            EX_MEM_Result.aluResult <= EX_MEM_Result.aluResult;
+            EX_MEM_Result.aluOverflow <= EX_MEM_Result.aluOverflow;
+            EX_MEM_Result.regReadDataB <= EX_MEM_Result.regReadDataB;
+        end
+        else
+        begin
+            EX_MEM_Result.pcValue <= ID_EX_Result.pcValue;
+            EX_MEM_Result.instruction <= ID_EX_Result.instruction;
+            EX_MEM_Result.signal <= ID_EX_Result.signal;
+            EX_MEM_Result.regWrite <= ID_EX_Result.regWrite;
+            EX_MEM_Result.aluResult <= aluResult;
+            EX_MEM_Result.aluOverflow <= aluOverflow;
+            EX_MEM_Result.regReadDataB <= regReadDataB;
+        end
+    end
 
 endmodule

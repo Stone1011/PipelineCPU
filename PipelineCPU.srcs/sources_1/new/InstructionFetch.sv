@@ -49,7 +49,7 @@ module InstructionFetch(
     begin
         if (system.reset)
         begin
-            result <= {32'b0, 32'b0};
+            result <= '{32'b0, `reset_Instruction};
         end
         else if (stall)
         begin

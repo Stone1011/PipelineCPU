@@ -22,8 +22,8 @@
 `include "Settings.vh"
 
 module CPU(
-    input clock,
-    input reset
+    input logic clock,
+    input logic reset
     );
 
     SystemSignal system;
@@ -44,14 +44,14 @@ module CPU(
     InstructionFetch IF(
         .system(system),
         .jumpValue(0),
-        .jumpEnabled(0),
-        .stall(0),
+        .jumpEnabled(1'b0),
+        .stall(1'b0),
         .result(IF_ID_Result)
     );
 
     InstructionDecode ID(
         .system(system),
-        .stall(0),
+        .stall(1'b0),
         .IF_ID_Result(IF_ID_Result),
         .ID_EX_Result(ID_EX_Result)
     );

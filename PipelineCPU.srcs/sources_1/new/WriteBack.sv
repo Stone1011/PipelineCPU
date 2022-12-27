@@ -38,8 +38,14 @@ module WriteBack(
             alu: regWriteData = MEM_WB_Result.aluResult;
             mem: regWriteData = MEM_WB_Result.memReadData;
             nextPC: regWriteData = MEM_WB_Result.pcValue + 4;
-            zeroRegWrite: regWriteData = 0;
+            default: regWriteData = 0;
         endcase
+    end
+
+    always_ff @(negedge system.clock)
+    begin
+        if(MEM_WB_Result.instruction.instructionCode == syscall)
+            $finish;
     end
 
 endmodule

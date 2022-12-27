@@ -144,7 +144,8 @@ module ArithmaticLogicUnit(
     logic isMinus, inputCin;
 
     // Result means the sum of two operands
-    int Result, OOver, Cout;
+    int Result;
+    logic Cout;
     adder_32 adder(.sum(Result), .cout(Cout), .a(A), .origin_b(B), .cin(inputCin), .isMinus(isMinus));
     
     ALUOp_t ALUOp;

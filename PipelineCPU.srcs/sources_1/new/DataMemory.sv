@@ -22,7 +22,7 @@
 `include "Settings.vh"
 
 module DataMemory(
-    SystemSignal system,
+    input SystemSignal system,
     input int address, 
     input writeEnabled, 
     input readEnabled,

@@ -23,9 +23,9 @@
 
 module ProgramCounter(
     input SystemSignal system,
-    input jumpEnabled,
+    input logic jumpEnabled,
     input int jumpValue,
-    input stall,
+    input logic stall,
     output int pcValue
     );
 
@@ -42,7 +42,7 @@ module ProgramCounter(
             else if(jumpEnabled)
                 pcValue <= jumpValue;
             else
-                pcValue += 4;
+                pcValue <= pcValue + 4;
         end
     end
 

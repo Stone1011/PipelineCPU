@@ -10,3 +10,4 @@ initial:
     nop
     nop
     nop
+    syscall

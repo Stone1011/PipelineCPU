@@ -77,7 +77,7 @@ typedef enum Vec2
     normalPC = 2'b11
 } PCSrc_t;
 
-typedef enum  
+typedef enum Vec2
 {  
     alu = 2'b00,
     mem = 2'b01,
@@ -93,6 +93,16 @@ typedef struct packed {
     Vec6 funct;
 } Instruction;
 
+`define reset_Instruction '{    \
+    instructionCode: nop,   \
+    rs: 5'b00000,   \
+    rt: 5'b00000,   \
+    rd: 5'b00000,   \
+    imm16: 16'b0000000000000000,    \
+    imm26: 26'b00000000000000000000000000,  \
+    funct: 6'b000000    \
+}
+
 typedef struct packed {
     RegWriteDst_t regWriteDst;
     RegWriteSrc_t regWriteSrc;
@@ -105,6 +115,18 @@ typedef struct packed {
     logic memWriteEnabled;
     logic branch;
 } ControlSignal;
+
+`define reset_ControlSignal '{    \
+    regWriteDst: otherDst,  \
+    regWriteSrc: zeroRegWrite,    \
+    aluSrc: otherAlu,   \
+    pcSrc: normalPC,    \
+    aluOp: ADD, \
+    regWriteEnabled: 1'b0,  \
+    memReadEnabled: 1'b0,   \
+    memWriteEnabled: 1'b0,  \
+    branch: 1'b0   \
+}
 
 typedef struct packed {
     int pcValue;
@@ -127,6 +149,7 @@ typedef struct packed {
     Vec5 regWrite;
     int aluResult;
     logic aluOverflow;
+    int regReadDataB;
 } EX_MEM_Reg;
 
 typedef struct packed {

@@ -37,23 +37,46 @@ module InstructionDecode(
         .instruction(IF_ID_Result.instruction), 
         .signal(signal));
 
-    assign ID_EX_Result.pcValue = IF_ID_Result.pcValue;
-    assign ID_EX_Result.instruction = IF_ID_Result.instruction;
-    assign ID_EX_Result.signal = signal;
-    
+    Vec5 regWriteDst;
     always_comb
     begin
-        ID_EX_Result.regReadA = IF_ID_Result.instruction.rs;
-        ID_EX_Result.regReadB = IF_ID_Result.instruction.rt;
-
         case(signal.regWriteDst)
-            rtDst: ID_EX_Result.regWrite = IF_ID_Result.instruction.rt;
-            rdDst: ID_EX_Result.regWrite = IF_ID_Result.instruction.rd;
-            raDst: ID_EX_Result.regWrite = 5'b11111;
-            otherDst: ID_EX_Result.regWrite = 5'b00000;
+            rtDst: regWriteDst = IF_ID_Result.instruction.rt;
+            rdDst: regWriteDst = IF_ID_Result.instruction.rd;
+            raDst: regWriteDst = 5'b11111;
+            otherDst: regWriteDst = 5'b00000;
         endcase
     end
 
-    
+    always_ff @( posedge system.clock )
+    begin
+        if(system.reset)
+        begin
+            ID_EX_Result.pcValue <= 32'h3000;
+            ID_EX_Result.instruction <= `reset_Instruction;
+            ID_EX_Result.signal <= `reset_ControlSignal;
+            ID_EX_Result.regReadA <= 5'b00000;
+            ID_EX_Result.regReadB <= 5'b00000;
+            ID_EX_Result.regWrite <= 5'b00000;
+        end
+        else if(stall)
+        begin
+            ID_EX_Result.pcValue <= ID_EX_Result.pcValue;
+            ID_EX_Result.instruction <= ID_EX_Result.instruction;
+            ID_EX_Result.signal <= ID_EX_Result.signal;
+            ID_EX_Result.regReadA <= ID_EX_Result.regReadA;
+            ID_EX_Result.regReadB <= ID_EX_Result.regReadB;
+            ID_EX_Result.regWrite <= ID_EX_Result.regWrite;
+        end
+        else
+        begin
+            ID_EX_Result.pcValue <= IF_ID_Result.pcValue;
+            ID_EX_Result.instruction <= IF_ID_Result.instruction;
+            ID_EX_Result.signal <= signal;
+            ID_EX_Result.regReadA <= IF_ID_Result.instruction.rs;
+            ID_EX_Result.regReadB <= IF_ID_Result.instruction.rt;
+            ID_EX_Result.regWrite <= regWriteDst;
+        end
+    end
 
 endmodule
