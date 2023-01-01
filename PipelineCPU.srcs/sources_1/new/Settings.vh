@@ -1,6 +1,8 @@
 `ifndef SETTINGS_VH
 `define SETTINGS_VH
 
+`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\add.txt"
+
 typedef struct packed 
 {
     logic reset;
@@ -161,5 +163,12 @@ typedef struct packed {
     logic aluOverflow;
     int memReadData;
 } MEM_WB_Reg;
+
+typedef enum Vec2
+{
+    Forwarding_GPR = 2'b00, // From Register Files
+    Forwarding_EX_MEM = 2'b01, // From Last time ALU Result
+    Forwarding_MEM_WB = 2'b10  // From DM or The Second Last ALU Result
+} Forwarding_t;
 
 `endif

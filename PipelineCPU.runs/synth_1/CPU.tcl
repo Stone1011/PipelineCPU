@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/19438/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8404-YIFAN-SERVER/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7vx485tffg1157-1
@@ -34,10 +33,17 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Settings.vh
 read_verilog -library xil_defaultlib -sv {
   C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControllerUnit.sv
   C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMemory.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Execution.sv
   C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/GeneralPurposeRegisters.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionDecode.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionFetch.sv
   C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Memory.sv
   C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ProgramCounter.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/SignExtendUnit.sv
+  C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/WriteBack.sv
   C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv
 }
 # Mark all dcp files as not used in implementation to prevent them from being

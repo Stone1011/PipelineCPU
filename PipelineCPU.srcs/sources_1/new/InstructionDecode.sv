@@ -24,7 +24,7 @@
 
 module InstructionDecode(
     input SystemSignal system,
-    input logic stall,
+    input logic clear,
     
     input IF_ID_Reg IF_ID_Result,
     output ID_EX_Reg ID_EX_Result
@@ -50,7 +50,7 @@ module InstructionDecode(
 
     always_ff @( posedge system.clock )
     begin
-        if(system.reset)
+        if(system.reset || clear)
         begin
             ID_EX_Result.pcValue <= 32'h3000;
             ID_EX_Result.instruction <= `reset_Instruction;
@@ -59,15 +59,15 @@ module InstructionDecode(
             ID_EX_Result.regReadB <= 5'b00000;
             ID_EX_Result.regWrite <= 5'b00000;
         end
-        else if(stall)
-        begin
-            ID_EX_Result.pcValue <= ID_EX_Result.pcValue;
-            ID_EX_Result.instruction <= ID_EX_Result.instruction;
-            ID_EX_Result.signal <= ID_EX_Result.signal;
-            ID_EX_Result.regReadA <= ID_EX_Result.regReadA;
-            ID_EX_Result.regReadB <= ID_EX_Result.regReadB;
-            ID_EX_Result.regWrite <= ID_EX_Result.regWrite;
-        end
+        // else if(stall)
+        // begin
+        //     ID_EX_Result.pcValue <= ID_EX_Result.pcValue;
+        //     ID_EX_Result.instruction <= ID_EX_Result.instruction;
+        //     ID_EX_Result.signal <= ID_EX_Result.signal;
+        //     ID_EX_Result.regReadA <= ID_EX_Result.regReadA;
+        //     ID_EX_Result.regReadB <= ID_EX_Result.regReadB;
+        //     ID_EX_Result.regWrite <= ID_EX_Result.regWrite;
+        // end
         else
         begin
             ID_EX_Result.pcValue <= IF_ID_Result.pcValue;

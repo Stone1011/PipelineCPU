@@ -24,9 +24,12 @@
 module Execution(
     input SystemSignal system,
     input ID_EX_Reg ID_EX_Result,
+    input MEM_WB_Reg MEM_WB_Result,
     input int regReadDataA,
     input int regReadDataB,
     input logic stall,
+    input Forwarding_t ForwardSignalA,
+    input Forwarding_t ForwardSignalB,
 
     output EX_MEM_Reg EX_MEM_Result
     );
@@ -38,13 +41,29 @@ module Execution(
         .out(signExtOfImm)
     );
 
-    int AluOprandA, AluOprandB;
-    assign AluOprandA = regReadDataA;
+    int AluOprandA, AluOprandB, tempAluOprandB;
+
+    ForwardingALU FUA(
+        .ForwardSignal(ForwardSignalA),
+        .current(regReadDataA),
+        .EX_MEM_Result(EX_MEM_Result),
+        .MEM_WB_Result(MEM_WB_Result),
+        .data(AluOprandA)
+    );
+    // assign AluOprandA = regReadDataA;
+
+    ForwardingALU FUB(
+        .ForwardSignal(ForwardSignalB),
+        .current(regReadDataB),
+        .EX_MEM_Result(EX_MEM_Result),
+        .MEM_WB_Result(MEM_WB_Result),
+        .data(tempAluOprandB)
+    );
 
     always_comb
     begin
         case(ID_EX_Result.signal.aluSrc)
-            rtAluSrc: AluOprandB = regReadDataB;
+            rtAluSrc: AluOprandB = tempAluOprandB;
             signExtOfImm: AluOprandB = signExtOfImm;
             leftShiftOfImm: AluOprandB = {ID_EX_Result.instruction.imm16[15:0], 16'b0};
             zeroExtOfImm: AluOprandB = {16'b0, ID_EX_Result.instruction.imm16[15:0]};
@@ -52,7 +71,6 @@ module Execution(
         endcase
     end
 
-    // TODO: Implement ALU module wiring
     int aluResult;
     logic aluOverflow;
     ArithmaticLogicUnit ALU(
@@ -93,7 +111,7 @@ module Execution(
             EX_MEM_Result.regWrite <= ID_EX_Result.regWrite;
             EX_MEM_Result.aluResult <= aluResult;
             EX_MEM_Result.aluOverflow <= aluOverflow;
-            EX_MEM_Result.regReadDataB <= regReadDataB;
+            EX_MEM_Result.regReadDataB <= tempAluOprandB;
         end
     end
 

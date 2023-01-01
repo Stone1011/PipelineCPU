@@ -30,7 +30,7 @@ module InstructionMemory(
 
     initial
     begin
-        $readmemh("C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\add-without-conflict.txt", memory);
+        $readmemh(`testbench, memory);
     end
 
     assign instruction.instructionCode = InstructionCode_t'(memory[address[11:2]]);

@@ -40,18 +40,21 @@ module CPU(
     int regWriteData;
     int regReadDataA, regReadDataB;
 
+    Forwarding_t ForwardA, ForwardB;
+    logic stall;
+
     // TODO: Implement jump using PCSrc...
     InstructionFetch IF(
         .system(system),
         .jumpValue(0),
         .jumpEnabled(1'b0),
-        .stall(1'b0),
+        .stall(stall),
         .result(IF_ID_Result)
     );
 
     InstructionDecode ID(
         .system(system),
-        .stall(1'b0),
+        .clear(stall),
         .IF_ID_Result(IF_ID_Result),
         .ID_EX_Result(ID_EX_Result)
     );
@@ -61,12 +64,16 @@ module CPU(
         .ID_EX_Result(ID_EX_Result),
         .regReadDataA(regReadDataA),
         .regReadDataB(regReadDataB),
-        .EX_MEM_Result(EX_MEM_Result)
+        .EX_MEM_Result(EX_MEM_Result),
+        .MEM_WB_Result(MEM_WB_Result),
+        .ForwardSignalA(ForwardA),
+        .ForwardSignalB(ForwardB)
     );
 
     Memory MEM(
         .system(system),
         .EX_MEM_Result(EX_MEM_Result),
+        .stall(1'b0),
         .MEM_WB_Result(MEM_WB_Result)
     );
 
@@ -87,6 +94,21 @@ module CPU(
         .writeContent(regWriteData),
         .readResultA(regReadDataA),
         .readResultB(regReadDataB)
+    );
+
+    ForwardingUnit FU(
+        .ID_EX_Result(ID_EX_Result),
+        .EX_MEM_Result(EX_MEM_Result),
+        .MEM_WB_Result(MEM_WB_Result),
+        .ForwardA(ForwardA),
+        .ForwardB(ForwardB)
+    );
+
+    BlockingUnit BU(
+        .system(system),
+        .ID_EX_Result(ID_EX_Result),
+        .IF_ID_Result(IF_ID_Result),
+        .stall(stall)
     );
 
 endmodule

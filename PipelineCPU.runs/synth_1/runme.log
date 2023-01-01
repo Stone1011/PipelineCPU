@@ -14,196 +14,152 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16596 
+INFO: Helper process launched with PID 20568 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 564.660 ; gain = 185.770
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 564.566 ; gain = 185.645
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'CPU' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:24]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:33]
-INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMemory.sv:24]
-INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (1#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMemory.sv:24]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:34]
-INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:24]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:33]
-
-Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
-	1: Unable to determine number of words or word size in RAM. 
-	2: No valid read/write found for RAM. 
-RAM dissolved into registers
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-WARNING: [Synth 8-3848] Net memory in module/entity InstructionMemory does not have driver. [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:29]
-INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (2#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:24]
-WARNING: [Synth 8-7023] instance 'IM' of module 'InstructionMemory' has 2 connections declared, but only 0 given [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:34]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'InstructionFetch' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionFetch.sv:24]
 INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ProgramCounter.sv:24]
-INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (3#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ProgramCounter.sv:24]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:36]
-INFO: [Synth 8-6157] synthesizing module 'GeneralPurposeRegisters' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/GeneralPurposeRegisters.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'GeneralPurposeRegisters' (4#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/GeneralPurposeRegisters.sv:23]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (1#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ProgramCounter.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:24]
+INFO: [Synth 8-3876] $readmem data file 'C:\Users\19438\Documents\GitHub\PipelineCPU\testbench\add-without-conflict.txt' is read successfully [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:33]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (2#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionMemory.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionFetch' (3#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionFetch.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'InstructionDecode' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionDecode.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'ControllerUnit' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControllerUnit.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'ControllerUnit' (4#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControllerUnit.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecode' (5#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionDecode.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'Execution' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Execution.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'SignExtendUnit' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/SignExtendUnit.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtendUnit' (6#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/SignExtendUnit.sv:24]
 INFO: [Synth 8-6157] synthesizing module 'ArithmaticLogicUnit' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:135]
 INFO: [Synth 8-6157] synthesizing module 'adder_32' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:24]
-INFO: [Synth 8-6155] done synthesizing module 'adder_32' (5#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:24]
-WARNING: [Synth 8-689] width (32) of port connection 'cout' does not match port width (1) of module 'adder_32' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:148]
-WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:174]
-WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:179]
-WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:184]
-WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:189]
-WARNING: [Synth 8-87] always_comb on 'C_reg' did not result in combinational logic [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:175]
-WARNING: [Synth 8-87] always_comb on 'mask_reg' did not result in combinational logic [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:199]
-WARNING: [Synth 8-87] always_comb on 'temp_reg' did not result in combinational logic [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:202]
-INFO: [Synth 8-6155] done synthesizing module 'ArithmaticLogicUnit' (6#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:135]
-WARNING: [Synth 8-7023] instance 'ALU' of module 'ArithmaticLogicUnit' has 5 connections declared, but only 0 given [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:37]
-INFO: [Synth 8-6155] done synthesizing module 'CPU' (7#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:24]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[31]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[30]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[29]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[28]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[27]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[26]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[25]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[24]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[23]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[22]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[21]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[20]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[19]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[18]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[17]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[16]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[15]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[14]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[13]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[12]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[1]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[0]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[31]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[30]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[29]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[28]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[27]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[26]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[25]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[24]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[23]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[22]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[21]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[20]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[19]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[18]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[17]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[16]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[15]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[14]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[13]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[1]
-WARNING: [Synth 8-3331] design DataMemory has unconnected port address[0]
-WARNING: [Synth 8-3331] design CPU has unconnected port clock
-WARNING: [Synth 8-3331] design CPU has unconnected port reset
+INFO: [Synth 8-6155] done synthesizing module 'adder_32' (7#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:24]
+WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:175]
+WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:180]
+WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:185]
+WARNING: [Synth 8-6090] variable 'Over' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:190]
+WARNING: [Synth 8-87] always_comb on 'C_reg' did not result in combinational logic [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:176]
+WARNING: [Synth 8-87] always_comb on 'mask_reg' did not result in combinational logic [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:200]
+WARNING: [Synth 8-87] always_comb on 'temp_reg' did not result in combinational logic [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:203]
+INFO: [Synth 8-6155] done synthesizing module 'ArithmaticLogicUnit' (8#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:135]
+INFO: [Synth 8-6155] done synthesizing module 'Execution' (9#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Execution.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'Memory' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Memory.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMemory.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (10#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMemory.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'Memory' (11#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/Memory.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'WriteBack' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/WriteBack.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'WriteBack' (12#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/WriteBack.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'GeneralPurposeRegisters' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/GeneralPurposeRegisters.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'GeneralPurposeRegisters' (13#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/GeneralPurposeRegisters.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (14#1) [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/CPU.sv:24]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port system[reset]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port system[clock]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][31]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][30]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][29]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][28]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][27]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][26]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][25]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][24]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][23]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][22]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][21]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][20]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][19]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][18]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][17]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][16]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][15]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][14]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][13]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][12]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][11]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][10]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][9]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][8]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][7]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][6]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][5]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][instructionCode][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rs][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rs][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rs][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rs][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rs][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rt][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rt][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rt][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rt][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rt][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rd][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rd][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rd][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rd][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][rd][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][15]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][14]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][13]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][12]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][11]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][10]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][9]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][8]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][7]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][6]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][5]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm16][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][25]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][24]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][23]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][22]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][21]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][20]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][19]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][18]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][17]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][16]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][15]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][14]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][13]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][12]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][11]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][10]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][9]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][8]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][7]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][6]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][5]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][imm26][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][funct][5]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][funct][4]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][funct][3]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][funct][2]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][funct][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[instruction][funct][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[signal][regWriteDst][1]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[signal][regWriteDst][0]
+WARNING: [Synth 8-3331] design WriteBack has unconnected port MEM_WB_Result[signal][aluSrc][2]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 774.957 ; gain = 396.066
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 777.277 ; gain = 398.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 774.957 ; gain = 396.066
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 777.277 ; gain = 398.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -211,29 +167,32 @@ Start Loading Part and Timing Information
 Loading part: xc7vx485tffg1157-1
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 774.957 ; gain = 396.066
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 777.277 ; gain = 398.355
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "memory" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'ID_EX_Result_reg[regReadA][4:0]' into 'ID_EX_Result_reg[instruction][rs][4:0]' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionDecode.sv:55]
+INFO: [Synth 8-4471] merging register 'ID_EX_Result_reg[regReadB][4:0]' into 'ID_EX_Result_reg[instruction][rt][4:0]' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/InstructionDecode.sv:55]
 INFO: [Synth 8-5546] ROM "C" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:175]
-WARNING: [Synth 8-327] inferring latch for variable 'mask_reg' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:199]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_reg' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:202]
+WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:176]
+WARNING: [Synth 8-327] inferring latch for variable 'mask_reg' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:200]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_reg' [C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/ArithmaticLogicUnit.sv:203]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1162.898 ; gain = 784.008
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1161.656 ; gain = 782.734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------------+------------+----------+
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
-|1     |muxpart__2048_DataMemory |           1|     65504|
-|2     |case_DataMemory__GD      |           1|        32|
+|1     |muxpart__2062_DataMemory |           1|     65504|
+|2     |case__4_DataMemory__GD   |           1|        32|
 |3     |DataMemory__GB2          |           1|      4032|
 |4     |DataMemory__GB3          |           1|     17408|
 |5     |DataMemory__GB4          |           1|     21728|
 |6     |DataMemory__GB5          |           1|     28511|
 |7     |DataMemory__GB6          |           1|     42863|
-|8     |CPU__GCB0                |           1|     34245|
-|9     |CPU__GCB1                |           1|      3357|
+|8     |Memory__GC0              |           1|       217|
+|9     |CPU__GC0                 |           1|      6534|
 +------+-------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -241,18 +200,32 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 3     
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               32 Bit    Registers := 2080  
+	               32 Bit    Registers := 2092  
+	               26 Bit    Registers := 4     
+	               16 Bit    Registers := 4     
+	                6 Bit    Registers := 7     
+	                5 Bit    Registers := 15    
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 14    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 1     
 	   9 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	  11 Input      6 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
 	  12 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 44    
+	  11 Input      3 Bit        Muxes := 1     
+	  11 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 43    
+	  11 Input      1 Bit        Muxes := 4     
 	  12 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -268,6 +241,49 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 11    
+Module Memory 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
+Module InstructionMemory 
+Detailed RTL Component Info : 
++---Muxes : 
+	  12 Input     32 Bit        Muxes := 1     
+Module InstructionFetch 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+Module ControllerUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	  11 Input      6 Bit        Muxes := 1     
+	  11 Input      3 Bit        Muxes := 1     
+	  11 Input      2 Bit        Muxes := 3     
+	  11 Input      1 Bit        Muxes := 4     
+Module InstructionDecode 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      5 Bit        Muxes := 1     
 Module adder_32 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -288,16 +304,29 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 1     
 	  12 Input      4 Bit        Muxes := 1     
 	  12 Input      1 Bit        Muxes := 2     
+Module Execution 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	               26 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
+Module WriteBack 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
 Module GeneralPurposeRegisters 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 32    
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 32    
-Module ProgramCounter 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -315,52 +344,281 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3331] design CPU has unconnected port clock
-WARNING: [Synth 8-3331] design CPU has unconnected port reset
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[31]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[30]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[29]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[28]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[27]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[26]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[25]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[24]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[23]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[22]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[21]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[20]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[19]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[18]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[17]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[16]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[15]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[14]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[13]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[12]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[1]
-WARNING: [Synth 8-3331] design InstructionMemory has unconnected port address[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\IF/PC/pcValue_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\IF/PC/pcValue_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][funct][0]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][funct][1]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][funct][2]' (FDRE) to 'i_0/IF/result_reg[instruction][imm26][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][funct][3]' (FDRE) to 'i_0/IF/result_reg[instruction][imm26][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][funct][4]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][funct][5]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][0]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][1]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][2]' (FDRE) to 'i_0/IF/result_reg[instruction][imm16][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][3]' (FDRE) to 'i_0/IF/result_reg[instruction][imm16][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][4]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][5]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][11] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][12]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][13] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][14]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][15] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][16]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][18] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][19]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][20] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][21]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][23] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm26][24]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm26][25] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][0]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][1]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][2]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][3]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][4]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][5]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][11] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][12]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][13] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][imm16][14]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][imm16][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rd][0] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][rd][1]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rd][2] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][rd][3]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rd][4] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][rt][0]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rt][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rt][2] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][rt][3]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rt][4] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][rs][0]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rs][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rs][2] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][rs][3]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][rs][4] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][0]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][1]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][4]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][26]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][5]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][11] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][12]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][13] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][14]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][15] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][16]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][20] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][21]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][24]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][25] )
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][26]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][27]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][27]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/IF/result_reg[instruction][instructionCode][28]' (FDRE) to 'i_0/IF/result_reg[instruction][instructionCode][29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IF/result_reg[instruction][instructionCode][31] )
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][funct][0]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][funct][1]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][funct][2]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][imm16][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][funct][3]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][imm16][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][funct][4]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][funct][5]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][0]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][1]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][2]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][imm16][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][3]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][imm16][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][4]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][5]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][12]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][14]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][16]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][19]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][21]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm26][24]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][0]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][1]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][2]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][3]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][4]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][5]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][12]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][imm16][14]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][rd][1]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][rd][3]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][rt][0]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][rt][3]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][rs][0]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][rs][3]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][0]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][1]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][4]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][5]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][12]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][14]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][16]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][19]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][21]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][24]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][26]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][27]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]'
+INFO: [Synth 8-3886] merging instance 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][28]' (FDRE) to 'i_0/ID/ID_EX_Result_reg[instruction][instructionCode][29]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][funct][0]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][funct][1]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][funct][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][funct][2]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][funct][3]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][funct][4]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][funct][5]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][0]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][1]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][2]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][3]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][4]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][5]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][12]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/EX/EX_MEM_Result_reg[instruction][imm26][14]' (FDRE) to 'i_0/EX/EX_MEM_Result_reg[instruction][imm16][5]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[0]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[1]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[2]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[3]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[4]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[5]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[6]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[7]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[8]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[9]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[10]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[11]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[12]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[13]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[14]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[15]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[16]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[17]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[18]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[19]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[20]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[21]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[22]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[23]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/temp_reg[24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[24]  is always disabled
+WARNING: [Synth 8-264] enable of latch \EX/ALU/mask_reg[24]  is always disabled
+INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\MEM_WB_Result_reg[pcValue][1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:49 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:47 . Memory (MB): peak = 1197.324 ; gain = 818.402
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------------+------------+----------+
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
-|1     |muxpart__2048_DataMemory |           1|     65504|
+|1     |muxpart__2062_DataMemory |           1|     65504|
 |2     |DataMemory__GB2          |           1|      4032|
 |3     |DataMemory__GB3          |           1|     17408|
 |4     |DataMemory__GB4          |           1|     21728|
 |5     |DataMemory__GB5          |           1|     22782|
 |6     |DataMemory__GB6          |           1|      2588|
-|7     |CPU__GCB0                |           1|         0|
+|7     |Memory__GC0              |           1|       101|
+|8     |CPU__GC0                 |           1|      1338|
 +------+-------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:47 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -373,7 +631,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -397,7 +655,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -410,7 +668,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -422,25 +680,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -465,25 +723,25 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:48 . Memory (MB): peak = 1200.480 ; gain = 821.559
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1112 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 1191.434 ; gain = 812.543
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 1191.434 ; gain = 812.543
+Synthesis finished with 0 errors, 0 critical warnings and 876 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:49 . Memory (MB): peak = 1200.480 ; gain = 821.559
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:49 . Memory (MB): peak = 1200.480 ; gain = 821.559
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1191.434 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1203.391 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-24 Infos, 188 Warnings, 0 Critical Warnings and 0 Errors encountered.
+194 Infos, 210 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:55 . Memory (MB): peak = 1191.434 ; gain = 836.402
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1191.434 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:53 . Memory (MB): peak = 1203.391 ; gain = 849.352
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1203.391 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.runs/synth_1/CPU.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CPU_utilization_synth.rpt -pb CPU_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 13 17:22:45 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan  1 19:27:12 2023...
