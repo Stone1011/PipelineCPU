@@ -37,7 +37,7 @@ module WriteBack(
         case(MEM_WB_Result.signal.regWriteSrc)
             alu: regWriteData = MEM_WB_Result.aluResult;
             mem: regWriteData = MEM_WB_Result.memReadData;
-            nextPC: regWriteData = MEM_WB_Result.pcValue + 4;
+            nextPC: regWriteData = MEM_WB_Result.pcValue + 8;
             default: regWriteData = 0;
         endcase
     end

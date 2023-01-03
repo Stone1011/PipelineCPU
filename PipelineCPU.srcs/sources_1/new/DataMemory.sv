@@ -27,6 +27,7 @@ module DataMemory(
     input writeEnabled, 
     input readEnabled,
     input int writeInput,
+    input int programCounter,
     output int readResult
     );
 
@@ -50,6 +51,7 @@ module DataMemory(
         else if(writeEnabled)
         begin
             memory[address[12:2]] <= writeInput;
+            $display("@%h: *%h <= %h", programCounter, address, writeInput);
         end
     end
 

@@ -24,7 +24,6 @@
 module Memory(
     input SystemSignal system,
     input EX_MEM_Reg EX_MEM_Result,
-    input logic stall,
 
     output MEM_WB_Reg MEM_WB_Result
     );
@@ -36,6 +35,7 @@ module Memory(
         .writeEnabled(EX_MEM_Result.signal.memWriteEnabled), 
         .readEnabled(EX_MEM_Result.signal.memReadEnabled),
         .writeInput(EX_MEM_Result.regReadDataB),
+        .programCounter(EX_MEM_Result.pcValue),
         .readResult(memReadData)
     );
 
@@ -51,16 +51,16 @@ module Memory(
             MEM_WB_Result.aluOverflow <= 0;
             MEM_WB_Result.memReadData <= 0;
         end 
-        else if(stall) 
-        begin
-            MEM_WB_Result.pcValue <= MEM_WB_Result.pcValue;
-            MEM_WB_Result.instruction <= MEM_WB_Result.instruction;
-            MEM_WB_Result.signal <= MEM_WB_Result.signal;
-            MEM_WB_Result.regWrite <= MEM_WB_Result.regWrite;
-            MEM_WB_Result.aluResult <= MEM_WB_Result.aluResult;
-            MEM_WB_Result.aluOverflow <= MEM_WB_Result.aluOverflow;
-            MEM_WB_Result.memReadData <= MEM_WB_Result.memReadData;
-        end
+//        else if(stall) 
+//        begin
+//            MEM_WB_Result.pcValue <= MEM_WB_Result.pcValue;
+//            MEM_WB_Result.instruction <= MEM_WB_Result.instruction;
+//            MEM_WB_Result.signal <= MEM_WB_Result.signal;
+//            MEM_WB_Result.regWrite <= MEM_WB_Result.regWrite;
+//            MEM_WB_Result.aluResult <= MEM_WB_Result.aluResult;
+//            MEM_WB_Result.aluOverflow <= MEM_WB_Result.aluOverflow;
+//            MEM_WB_Result.memReadData <= MEM_WB_Result.memReadData;
+//        end
         else
         begin
             MEM_WB_Result.pcValue <= EX_MEM_Result.pcValue;

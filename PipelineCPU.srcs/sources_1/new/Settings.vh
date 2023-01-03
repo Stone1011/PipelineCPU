@@ -1,7 +1,9 @@
 `ifndef SETTINGS_VH
 `define SETTINGS_VH
 
-`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\add.txt"
+`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\branch-all.txt"
+
+//`define DEBUG
 
 typedef struct packed 
 {
@@ -116,6 +118,7 @@ typedef struct packed {
     logic memReadEnabled;
     logic memWriteEnabled;
     logic branch;
+    logic realBranch;
 } ControlSignal;
 
 `define reset_ControlSignal '{    \
@@ -127,7 +130,8 @@ typedef struct packed {
     regWriteEnabled: 1'b0,  \
     memReadEnabled: 1'b0,   \
     memWriteEnabled: 1'b0,  \
-    branch: 1'b0   \
+    branch: 1'b0,   \
+    realBranch: 1'b0    \
 }
 
 typedef struct packed {
@@ -142,6 +146,8 @@ typedef struct packed {
     Vec5 regReadA;
     Vec5 regReadB;
     Vec5 regWrite;
+    int regReadDataA;
+    int regReadDataB;
 } ID_EX_Reg;
 
 typedef struct packed {
@@ -168,7 +174,8 @@ typedef enum Vec2
 {
     Forwarding_GPR = 2'b00, // From Register Files
     Forwarding_EX_MEM = 2'b01, // From Last time ALU Result
-    Forwarding_MEM_WB = 2'b10  // From DM or The Second Last ALU Result
+    Forwarding_MEM_WB = 2'b10,  // From DM or The Second Last ALU Result
+    Forwarding_ID_EX = 2'b11
 } Forwarding_t;
 
 `endif

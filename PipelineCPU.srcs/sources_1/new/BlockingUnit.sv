@@ -25,7 +25,8 @@ module BlockingUnit(
     input SystemSignal system,
     input IF_ID_Reg IF_ID_Result,
     input ID_EX_Reg ID_EX_Result,
-
+    input logic stallPeriod,
+    
     output logic stall
     );
 
@@ -61,6 +62,7 @@ module BlockingUnit(
     //     end
     // end
 
+    logic stallBlock;
     always_comb
     begin
         if(ID_EX_Result.signal.memReadEnabled
@@ -69,10 +71,12 @@ module BlockingUnit(
             || ID_EX_Result.regWrite == IF_ID_Result.instruction.rs)
             && needRegRead)
         begin
-            stall = 1'b1;
+            stallBlock = 1'b1;
         end
         else
-            stall = 1'b0;
+            stallBlock = 1'b0;
     end
+
+    assign stall = stallBlock | stallPeriod;
 
 endmodule

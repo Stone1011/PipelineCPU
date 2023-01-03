@@ -46,4 +46,14 @@ module ProgramCounter(
         end
     end
 
+    `ifdef DEBUG
+    always_ff @(posedge system.clock)
+    begin
+        if(system.reset)
+            $display("PC: 0x%08x", 32'h3000);
+        else
+            $display("PC: 0x%08x", pcValue);
+    end
+    `endif
+
 endmodule

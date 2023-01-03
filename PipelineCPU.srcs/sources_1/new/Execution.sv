@@ -25,8 +25,7 @@ module Execution(
     input SystemSignal system,
     input ID_EX_Reg ID_EX_Result,
     input MEM_WB_Reg MEM_WB_Result,
-    input int regReadDataA,
-    input int regReadDataB,
+
     input logic stall,
     input Forwarding_t ForwardSignalA,
     input Forwarding_t ForwardSignalB,
@@ -42,6 +41,9 @@ module Execution(
     );
 
     int AluOprandA, AluOprandB, tempAluOprandB;
+    int regReadDataA, regReadDataB;
+    assign regReadDataA = ID_EX_Result.regReadDataA;
+    assign regReadDataB = ID_EX_Result.regReadDataB;
 
     ForwardingALU FUA(
         .ForwardSignal(ForwardSignalA),

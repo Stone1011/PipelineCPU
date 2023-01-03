@@ -27,6 +27,7 @@ module GeneralPurposeRegisters(
     input Vec5 writeNo,
     input writeEnabled,
     input int writeContent,
+    input int programCounter,
 
     output int readResultA,
     output int readResultB
@@ -50,7 +51,10 @@ module GeneralPurposeRegisters(
         if(system.reset)
             RESET();
         else if(writeEnabled && writeNo != 0)
+        begin
+            $display("@%h: $%d <= %h", programCounter, writeNo, writeContent);
             GPR[writeNo] <= writeContent;
+        end
     end
 
     assign readResultA = GPR[readNoA];
