@@ -2,6 +2,7 @@
 `define SETTINGS_VH
 
 `define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\branch-all.txt"
+// `define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips10Code\\code\\Ce0.asm.txt"
 
 //`define DEBUG
 
