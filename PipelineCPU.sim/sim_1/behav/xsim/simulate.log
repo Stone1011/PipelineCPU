@@ -1,11 +1,12 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
 @00003000: $ 9 <= 00010000
-@00003008: *00000000 <= 00010000
-@00003004: $10 <= 00010000
-@0000300c: $11 <= 00010000
+@00003008: *00000000 <= 00010011
+@00003004: $10 <= 00010011
+@0000300c: $11 <= 00010011
 @00003014: $12 <= 00010000
+@00003018: $13 <= 00010000
 @0000301c: $31 <= 00003024
 @0000302c: $14 <= 00020000
 @00003030: $15 <= 00010000
-$finish called at time : 215 ns : File "C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/WriteBack.sv" Line 48
+$finish called at time : 225 ns : File "C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.srcs/sources_1/new/WriteBack.sv" Line 48

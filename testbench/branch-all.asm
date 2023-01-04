@@ -1,7 +1,7 @@
     .text
 main:
     lui $t1, 0x1
-    addu $t2, $t1, $zero
+    ori $t2, $t1, 0x11
     sw $t2, 0($zero)
     lw $t3, 0($zero)
     beq $t1, $t3, .L1 # stall for 2 cycles

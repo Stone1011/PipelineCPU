@@ -93,7 +93,7 @@ module ControllerUnit(
                 signal.regWriteSrc = alu;
                 signal.aluSrc = zeroExtOfImm;
                 signal.pcSrc = normalPC;
-                signal.aluOp = ALUOp_t'(instruction.funct);
+                signal.aluOp = OR;
                 signal.regWriteEnabled = 1;
                 signal.memReadEnabled = 0;
                 signal.memWriteEnabled = 0;
