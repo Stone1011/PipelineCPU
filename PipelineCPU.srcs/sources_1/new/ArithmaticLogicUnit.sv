@@ -190,18 +190,19 @@ module ArithmaticLogicUnit(
                     Over <= 0;
                     C <= Result;
                 end
-            LSHIFT:
+            LSHIFT, LSHIFTV:
                 C <= B << A[4:0];
-            LRSHIFT:
+            LRSHIFT, LRSHIFTV:
                 C <= B >> A[4:0];
-            ARSHIFT:
+            ARSHIFT, ARSHIFTV:
                 begin
-                    if(B[31])
-                        mask <= ~(32'b0) << 6'b100000 - A[4:0];
-                    else
-                        mask <= 0;
-                    temp <= B >> A[4:0];
-                    C = temp | mask;
+                    // if(B[31])
+                    //     mask <= ~(32'b0) << 6'b100000 - A[4:0];
+                    // else
+                    //     mask <= 0;
+                    // temp <= B >> A[4:0];
+                    // C = temp | mask;
+                    C <= ($signed(B)) >>> A[4:0];
                 end
             AND:
                 C <= A & B;
@@ -211,6 +212,10 @@ module ArithmaticLogicUnit(
                 C <= A ^ B;
             NOR:
                 C <= ~(A | B);
+            SLT:
+                C <= $signed(A) < $signed(B);
+            SLTU:
+                C <= $unsigned(A) < $unsigned(B);
             default:
                 C <= 0;
             endcase

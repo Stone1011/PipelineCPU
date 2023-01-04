@@ -40,7 +40,7 @@ module Execution(
         .out(signExtOfImm)
     );
 
-    int AluOprandA, AluOprandB, tempAluOprandB;
+    int AluOprandA, AluOprandB, tempAluOprandB, tempAluOprandA;
     int regReadDataA, regReadDataB;
     assign regReadDataA = ID_EX_Result.regReadDataA;
     assign regReadDataB = ID_EX_Result.regReadDataB;
@@ -50,7 +50,7 @@ module Execution(
         .current(regReadDataA),
         .EX_MEM_Result(EX_MEM_Result),
         .MEM_WB_Result(MEM_WB_Result),
-        .data(AluOprandA)
+        .data(tempAluOprandA)
     );
     // assign AluOprandA = regReadDataA;
 
@@ -62,6 +62,16 @@ module Execution(
         .data(tempAluOprandB)
     );
 
+    // AluOprandA
+    always_comb
+    begin
+        case(ID_EX_Result.signal.aluSrc)
+            shamtAluSrc: AluOprandA = {27'h0000000, ID_EX_Result.instruction.shamt[4:0]};   // rt
+            default: AluOprandA = tempAluOprandA;
+        endcase
+    end
+
+    // AluOprandB
     always_comb
     begin
         case(ID_EX_Result.signal.aluSrc)
@@ -69,6 +79,7 @@ module Execution(
             signExtOfImm: AluOprandB = signExtOfImm;
             leftShiftOfImm: AluOprandB = {ID_EX_Result.instruction.imm16[15:0], 16'b0};
             zeroExtOfImm: AluOprandB = {16'b0, ID_EX_Result.instruction.imm16[15:0]};
+            shamtAluSrc: AluOprandB = tempAluOprandB;
             default: AluOprandB = 0;
         endcase
     end
@@ -82,6 +93,12 @@ module Execution(
         .C(aluResult),
         .Over(aluOverflow)
     );
+
+    always_comb
+    begin
+        if(aluOverflow)
+            $stop;
+    end
 
     always_ff @(posedge system.clock)
     begin
@@ -97,13 +114,14 @@ module Execution(
         end
         else if(stall)
         begin
-            EX_MEM_Result.pcValue <= EX_MEM_Result.pcValue;
-            EX_MEM_Result.instruction <= EX_MEM_Result.instruction;
-            EX_MEM_Result.signal <= EX_MEM_Result.signal;
-            EX_MEM_Result.regWrite <= EX_MEM_Result.regWrite;
-            EX_MEM_Result.aluResult <= EX_MEM_Result.aluResult;
-            EX_MEM_Result.aluOverflow <= EX_MEM_Result.aluOverflow;
-            EX_MEM_Result.regReadDataB <= EX_MEM_Result.regReadDataB;
+            // EX_MEM_Result.pcValue <= EX_MEM_Result.pcValue;
+            // EX_MEM_Result.instruction <= EX_MEM_Result.instruction;
+            // EX_MEM_Result.signal <= EX_MEM_Result.signal;
+            // EX_MEM_Result.regWrite <= EX_MEM_Result.regWrite;
+            // EX_MEM_Result.aluResult <= EX_MEM_Result.aluResult;
+            // EX_MEM_Result.aluOverflow <= EX_MEM_Result.aluOverflow;
+            // EX_MEM_Result.regReadDataB <= EX_MEM_Result.regReadDataB;
+            EX_MEM_Result <= EX_MEM_Result;
         end
         else
         begin

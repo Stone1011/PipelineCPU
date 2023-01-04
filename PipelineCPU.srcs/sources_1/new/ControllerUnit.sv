@@ -45,11 +45,37 @@ module ControllerUnit(
             end
             // addu: 000000, rs, rt, rd, 00000, 100001 => rd := rs + rt
             // subu: 000000, rs, rt, rd, 00000, 100011 => rd := rs - rt
-            addu, subu:
+            // add/sub will trap($stop) if overflow
+            // sllv: 000000, rs, rt, rd, 00000, 000100 => rd := rt << rs
+            // srlv: 000000, rs, rt, rd, 00000, 000110 => rd := rt >> rs
+            // srav: 000000, rs, rt, rd, 00000, 000111 => rd := rt >>> rs
+            // and:  000000, rs, rt, rd, 00000, 100100 => rd := rs and rt
+            // or:   000000, rs, rt, rd, 00000, 100101 => rd := rs or rt
+            // xor:  000000, rs, rt, rd, 00000, 100110 => rd := rs xor rt
+            // nor:  000000, rs, rt, rd, 00000, 100111 => rd := nor(rs, rt)
+            // slt:  000000, rs, rt, rd, 00000, 101010 => rd := rs < rt
+            // sltu: 000000, rs, rt, rd, 00000, 101011 => rd := rs < rt (unsigned)
+            addu, subu, add, sub, sllv, srlv, srav, And, Or, Xor, Nor, slt, sltu:
             begin
                 signal.regWriteDst = rdDst;
                 signal.regWriteSrc = alu;
                 signal.aluSrc = rtAluSrc;
+                signal.pcSrc = normalPC;
+                signal.aluOp = ALUOp_t'(instruction.funct);
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
+            // sll:  000000, 00000, rt, rd, shamt, 000000 => rd := rt << shamt
+            // srl:  000000, 00000, rt, rd, shamt, 000010 => rd := rt >> shamt
+            // sra:  000000, 00000, rt, rd, shamt, 000011 => rd := rt >>> shamt
+            sll, srl, sra:
+            begin
+                signal.regWriteDst = rdDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = shamtAluSrc;
                 signal.pcSrc = normalPC;
                 signal.aluOp = ALUOp_t'(instruction.funct);
                 signal.regWriteEnabled = 1;

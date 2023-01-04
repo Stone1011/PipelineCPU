@@ -40,5 +40,6 @@ module InstructionMemory(
     assign instruction.imm16 = memory[address[11:2]][15:0];
     assign instruction.imm26 = memory[address[11:2]][25:0];
     assign instruction.funct = memory[address[11:2]][5:0];
+    assign instruction.shamt = memory[address[11:2]][10:6];
 
 endmodule

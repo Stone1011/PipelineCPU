@@ -1,7 +1,7 @@
 `ifndef SETTINGS_VH
 `define SETTINGS_VH
 
-`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\branch-all.txt"
+`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\arith-all.txt"
 // `define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips10Code\\code\\Ce0.asm.txt"
 
 //`define DEBUG
@@ -30,19 +30,38 @@ typedef enum Vec6
     LSHIFT = 6'b000000,
     LRSHIFT = 6'b000010,
     ARSHIFT = 6'b000011,
+    LSHIFTV = 6'b000100,
+    LRSHIFTV = 6'b000110,
+    ARSHIFTV = 6'b000111,
     AND = 6'b100100,
     OR = 6'b100101,
     XOR = 6'b100110,
-    NOR = 6'b100111
+    NOR = 6'b100111,
+    SLT = 6'b101010,
+    SLTU = 6'b101011
 } ALUOp_t;
 
 typedef enum Vec32
 {
     // 6 + 5 + 5 + 5 + 5 + 6 = 32
     nop     = 32'b000000_00000_00000_00000_00000_000000,
-    // codet + rs + rt + rd + 00000 + funct
+    // codet + rs + rt + rd + shamt + funct
     addu    = 32'b000000_?????_?????_?????_00000_100001,
     subu    = 32'b000000_?????_?????_?????_00000_100011,
+    add     = 32'b000000_?????_?????_?????_00000_100000,
+    sub     = 32'b000000_?????_?????_?????_00000_100010,
+    sll     = 32'b000000_00000_?????_?????_?????_000000,
+    srl     = 32'b000000_00000_?????_?????_?????_000010,
+    sra     = 32'b000000_00000_?????_?????_?????_000011,
+    sllv    = 32'b000000_?????_?????_?????_00000_000100,
+    srlv    = 32'b000000_?????_?????_?????_00000_000110,
+    srav    = 32'b000000_?????_?????_?????_00000_000111,
+    And     = 32'b000000_?????_?????_?????_00000_100100,
+    Or      = 32'b000000_?????_?????_?????_00000_100101,
+    Xor     = 32'b000000_?????_?????_?????_00000_100110,
+    Nor     = 32'b000000_?????_?????_?????_00000_100111,
+    slt     = 32'b000000_?????_?????_?????_00000_101010,
+    sltu    = 32'b000000_?????_?????_?????_00000_101011,
     jr      = 32'b000000_?????_00000_00000_00000_001000, // what is hint?
     syscall = 32'b000000_00000_00000_00000_00000_001100, // what is code?
     // xor     = 32'b000000_?????_?????_?????_00000_100110,
@@ -71,7 +90,8 @@ typedef enum Vec3
     signExtOfImm = 3'b001,
     leftShiftOfImm = 3'b010,
     zeroExtOfImm = 3'b011,
-    otherAlu = 3'b100
+    otherAlu = 3'b100,
+    shamtAluSrc = 3'b101
 } ALUSrc_t;
 
 typedef enum Vec2 
@@ -96,6 +116,7 @@ typedef struct packed {
     Vec16 imm16;
     Vec26 imm26;
     Vec6 funct;
+    Vec5 shamt;
 } Instruction;
 
 `define reset_Instruction '{    \
@@ -105,7 +126,8 @@ typedef struct packed {
     rd: 5'b00000,   \
     imm16: 16'b0000000000000000,    \
     imm26: 26'b00000000000000000000000000,  \
-    funct: 6'b000000    \
+    funct: 6'b000000,    \
+    shamt: 5'b00000 \
 }
 
 typedef struct packed {
