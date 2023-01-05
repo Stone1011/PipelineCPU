@@ -112,6 +112,48 @@ module ControllerUnit(
                 signal.branch = 0;
                 signal.realBranch = 0;
             end
+            // addi: 001000, rs, rt, 16'imm => rt := rs + signExt(imm)
+            addi:
+            begin
+                signal.regWriteDst = rtDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = signExtOfImm;
+                signal.pcSrc = normalPC;
+                signal.aluOp = ADD;
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
+            // addiu: 001001, rs, rt, 16'imm => rt := rs + signExt(imm)
+            addiu:
+            begin
+                signal.regWriteDst = rtDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = signExtOfImm;
+                signal.pcSrc = normalPC;
+                signal.aluOp = UADD;
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
+            // andi: 001100, rs, rt, 16'imm => rt := rs and zeroExt(imm)
+            andi:
+            begin
+                signal.regWriteDst = rtDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = zeroExtOfImm;
+                signal.pcSrc = normalPC;
+                signal.aluOp = AND;
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
             // ori:  001101, rs, rt, 16'imm => rt := rs or zeroExt(imm)
             ori:
             begin
@@ -120,6 +162,48 @@ module ControllerUnit(
                 signal.aluSrc = zeroExtOfImm;
                 signal.pcSrc = normalPC;
                 signal.aluOp = OR;
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
+            // xori: 001110, rs, rt, 16'imm => rt := rs xor zeroExt(imm)
+            xori:
+            begin
+                signal.regWriteDst = rtDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = zeroExtOfImm;
+                signal.pcSrc = normalPC;
+                signal.aluOp = XOR;
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
+            // slti: 001010, rs, rt, 16'imm => rt := rs < signExt(imm)
+            slti:
+            begin
+                signal.regWriteDst = rtDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = signExtOfImm;
+                signal.pcSrc = normalPC;
+                signal.aluOp = SLT;
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+            end
+            // sltiu: 001011, rs, rt, 16'imm => rt := unsigned(rs) < unsigned(signExt(imm))
+            sltiu:
+            begin
+                signal.regWriteDst = rtDst;
+                signal.regWriteSrc = alu;
+                signal.aluSrc = signExtOfImm;
+                signal.pcSrc = normalPC;
+                signal.aluOp = SLTU;
                 signal.regWriteEnabled = 1;
                 signal.memReadEnabled = 0;
                 signal.memWriteEnabled = 0;
