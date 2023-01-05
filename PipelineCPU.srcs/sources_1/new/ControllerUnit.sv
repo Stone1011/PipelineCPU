@@ -96,7 +96,21 @@ module ControllerUnit(
                 signal.memReadEnabled = 0;
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;
-                signal.realBranch = 0;
+                signal.realBranch = 1; // actually it's not a branch, but we need to set it to 1 to avoid the hazard
+            end
+            // jalr: 000000, rs, 00000, rd, 00000, 001001 => rd := PC + 8; PC := rs
+            jalr:
+            begin
+                signal.regWriteDst = rdDst;
+                signal.regWriteSrc = nextPC;
+                signal.aluSrc = otherAlu;
+                signal.pcSrc = regReadA; // rs
+                signal.aluOp = ALUOp_t'(0);
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 1;
+                signal.realBranch = 1; // actually it's not a branch, but we need to set it to 1 to avoid the hazard
             end
             // syscall: 000000, [19:0] code, 001100 => $finish
             syscall:
@@ -239,13 +253,18 @@ module ControllerUnit(
                 signal.realBranch = 0;
             end
             // beq:  000100, rs, rt, offset(imm) => if rs=rt then PC = PC + offset
-            beq:
+            // bne:  000101, rs, rt, offset(imm) => if rs!=rt then PC = PC + offset
+            // blez: 000110, rs, 00000, offset(imm) => if rs<=0 then PC = PC + offset
+            // bgtz: 000111, rs, 00000, offset(imm) => if rs>0 then PC = PC + offset
+            // bgez: 000001, rs, 00001, offset(imm) => if rs>=0 then PC = PC + offset
+            // bltz: 000001, rs, 00000, offset(imm) => if rs<0 then PC = PC + offset
+            beq, bne, blez, bgtz, bgez, bltz:
             begin
                 signal.regWriteDst = otherDst;
                 signal.regWriteSrc = nextPC;
                 signal.aluSrc = rtAluSrc;
                 signal.pcSrc = plusImm;
-                signal.aluOp = ALUOp_t'(SUB);
+                signal.aluOp = ALUOp_t'(USUB);
                 signal.regWriteEnabled = 0;
                 signal.memReadEnabled = 0;
                 signal.memWriteEnabled = 0;
@@ -275,6 +294,20 @@ module ControllerUnit(
                 signal.pcSrc = targetImm;
                 signal.aluOp = ALUOp_t'(0);
                 signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 1;
+                signal.realBranch = 0;
+            end
+            j:
+            // j:    000010, target  => PC := PC[31:28] | target[25:0] | 2'b00
+            begin
+                signal.regWriteDst = otherDst;
+                signal.regWriteSrc = otherSrc;
+                signal.aluSrc = otherAlu;
+                signal.pcSrc = targetImm;
+                signal.aluOp = ALUOp_t'(0);
+                signal.regWriteEnabled = 0;
                 signal.memReadEnabled = 0;
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;

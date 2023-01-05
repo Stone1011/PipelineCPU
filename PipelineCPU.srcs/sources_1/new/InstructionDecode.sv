@@ -78,17 +78,34 @@ module InstructionDecode(
         .data(regDataB),
         .stall(stallPeriodB)
     );
-    logic equal;
+    logic equal, conditionAcquired;
     assign equal = (regDataA == regDataB);
+
+    // Test when the condition is acquired
+    always_comb
+    begin
+        // NEED casex NOT case!!!
+        casex(IF_ID_Result.instruction.instructionCode)
+            beq: conditionAcquired = equal;
+            bne: conditionAcquired = !equal;
+            blez: conditionAcquired = ($signed(regDataA) <= 0);
+            bgtz: conditionAcquired = ($signed(regDataA) > 0);
+            bgez: conditionAcquired = ($signed(regDataA) >= 0);
+            bltz: conditionAcquired = ($signed(regDataA) < 0);
+            jalr, jr: conditionAcquired = 1'b1; // These instructions don't need to acquire the condition, but they need not a stall, so they are realBranches
+            default: conditionAcquired = 1'b0;
+        endcase
+    end
     
     assign stallPeriod = (stallPeriodA | stallPeriodB) & signal.realBranch;
-    assign jump = signal.realBranch & equal & !stallPeriod | signal.branch & !signal.realBranch;
+    assign jump = signal.realBranch & conditionAcquired & !stallPeriod | signal.branch & !signal.realBranch;
     always_comb
     begin
         casex(IF_ID_Result.instruction.instructionCode)
-            beq: jumpValue = IF_ID_Result.pcValue + 4 + {IF_ID_Result.instruction.imm16[13:0], 2'b00};
-            jal: jumpValue = {IF_ID_Result.pcValue[31:28], IF_ID_Result.instruction.imm26, 2'b00};
-            jr: jumpValue = regDataA;
+            beq, bne, blez, bgtz, bgez, bltz: jumpValue = IF_ID_Result.pcValue + 4 + 
+                {IF_ID_Result.instruction.imm16[15] ? 14'h3fff : 14'h0000, IF_ID_Result.instruction.imm16[15:0], 2'b00};
+            jal, j: jumpValue = {IF_ID_Result.pcValue[31:28], IF_ID_Result.instruction.imm26, 2'b00};
+            jr, jalr: jumpValue = regDataA;
         endcase
     end
     
@@ -111,18 +128,6 @@ module InstructionDecode(
             ID_EX_Result.regReadDataA <= 32'h00000000;
             ID_EX_Result.regReadDataB <= 32'h00000000;
         end
-        // else if(ID_EX_Result.stallPeriod != 2'b00)
-        // begin
-        //     ID_EX_Result.pcValue <= ID_EX_Result.pcValue;
-        //     ID_EX_Result.instruction <= ID_EX_Result.instruction;
-        //     ID_EX_Result.signal <= ID_EX_Result.signal;
-        //     ID_EX_Result.regReadA <= ID_EX_Result.regReadA;
-        //     ID_EX_Result.regReadB <= ID_EX_Result.regReadB;
-        //     ID_EX_Result.regWrite <= ID_EX_Result.regWrite;
-        //     ID_EX_Result.regReadDataA <= ID_EX_Result.regReadDataA;
-        //     ID_EX_Result.regReadDataB <= ID_EX_Result.regReadDataB;
-        //     ID_EX_Result.stallPeriod <= ID_EX_Result.stallPeriod - 1;
-        // end
         else
         begin
             ID_EX_Result.pcValue <= IF_ID_Result.pcValue;
