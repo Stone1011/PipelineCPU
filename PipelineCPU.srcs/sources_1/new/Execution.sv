@@ -33,11 +33,11 @@ module Execution(
     output EX_MEM_Reg EX_MEM_Result
     );
 
-    int signExtOfImm;
+    int signExtOfImmNumber;
 
     SignExtendUnit SEU(
         .in(ID_EX_Result.instruction.imm16),
-        .out(signExtOfImm)
+        .out(signExtOfImmNumber)
     );
 
     int AluOprandA, AluOprandB, tempAluOprandB, tempAluOprandA;
@@ -76,7 +76,7 @@ module Execution(
     begin
         case(ID_EX_Result.signal.aluSrc)
             rtAluSrc: AluOprandB = tempAluOprandB;
-            signExtOfImm: AluOprandB = signExtOfImm;
+            signExtOfImm: AluOprandB = signExtOfImmNumber; // Variable name should not be the same as enumeration! 
             leftShiftOfImm: AluOprandB = {ID_EX_Result.instruction.imm16[15:0], 16'b0};
             zeroExtOfImm: AluOprandB = {16'b0, ID_EX_Result.instruction.imm16[15:0]};
             shamtAluSrc: AluOprandB = tempAluOprandB;

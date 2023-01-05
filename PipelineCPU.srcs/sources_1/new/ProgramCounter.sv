@@ -38,7 +38,12 @@ module ProgramCounter(
         else
         begin
             if(stall)
+            begin
                 pcValue <= pcValue;
+                `ifdef SHOW_STALLS
+                $display("Stall at PC: 0x%08x", pcValue);
+                `endif
+            end
             else if(jumpEnabled)
                 pcValue <= jumpValue;
             else

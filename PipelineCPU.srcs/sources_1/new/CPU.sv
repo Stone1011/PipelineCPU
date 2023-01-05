@@ -46,7 +46,6 @@ module CPU(
     logic jump;
     int jumpValue;
 
-    // TODO: Implement jump using PCSrc...
     InstructionFetch IF(
         .system(system),
         .jumpValue(jumpValue),

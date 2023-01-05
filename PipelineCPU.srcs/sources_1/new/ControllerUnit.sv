@@ -225,13 +225,17 @@ module ControllerUnit(
                 signal.realBranch = 0;
             end
             // lw:   100011, base(rs), rt, offset(imm) => rt := M[base+offset]
-            lw:
+            // lb:   100000, base(rs), rt, offset(imm) => rt := M[base+offset]
+            // lbu:  100100, base(rs), rt, offset(imm) => rt := M[base+offset]
+            // lh:   100001, base(rs), rt, offset(imm) => rt := M[base+offset]
+            // lhu:  100101, base(rs), rt, offset(imm) => rt := M[base+offset]
+            lw, lb, lbu, lh, lhu:
             begin
                 signal.regWriteDst = rtDst;
                 signal.regWriteSrc = mem;
                 signal.aluSrc = signExtOfImm;
                 signal.pcSrc = normalPC;
-                signal.aluOp = ALUOp_t'(ADD);
+                signal.aluOp = ALUOp_t'(UADD);
                 signal.regWriteEnabled = 1;
                 signal.memReadEnabled = 1;
                 signal.memWriteEnabled = 0;
@@ -239,13 +243,15 @@ module ControllerUnit(
                 signal.realBranch = 0;
             end
             // sw:   101011, base(rs), rt, offset(imm) => M[base+offset] := rt
-            sw:
+            // sb:   101000, base(rs), rt, offset(imm) => M[base+offset] := rt[7:0]
+            // sh:   101001, base(rs), rt, offset(imm) => M[base+offset] := rt[15:0]
+            sw, sb, sh:
             begin
                 signal.regWriteDst = otherDst;
                 signal.regWriteSrc = zeroRegWrite;
                 signal.aluSrc = signExtOfImm;
                 signal.pcSrc = normalPC;
-                signal.aluOp = ALUOp_t'(ADD);
+                signal.aluOp = ALUOp_t'(UADD);
                 signal.regWriteEnabled = 0;
                 signal.memReadEnabled = 0;
                 signal.memWriteEnabled = 1;
@@ -303,7 +309,7 @@ module ControllerUnit(
             // j:    000010, target  => PC := PC[31:28] | target[25:0] | 2'b00
             begin
                 signal.regWriteDst = otherDst;
-                signal.regWriteSrc = otherSrc;
+                signal.regWriteSrc = zeroRegWrite;
                 signal.aluSrc = otherAlu;
                 signal.pcSrc = targetImm;
                 signal.aluOp = ALUOp_t'(0);
