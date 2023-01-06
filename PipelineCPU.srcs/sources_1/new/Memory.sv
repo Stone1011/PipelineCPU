@@ -147,6 +147,7 @@ module Memory(
             MEM_WB_Result.aluResult <= 0;
             MEM_WB_Result.aluOverflow <= 0;
             MEM_WB_Result.memReadData <= 0;
+            MEM_WB_Result.specialReg <= 0;
         end
 //        else if(stall) 
 //        begin
@@ -170,6 +171,7 @@ module Memory(
                 MEM_WB_Result.memReadData <= memReadData;
             else
                 MEM_WB_Result.memReadData <= 0;
+            MEM_WB_Result.specialReg <= EX_MEM_Result.specialReg;
         end
     end
 

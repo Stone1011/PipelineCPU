@@ -42,6 +42,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // addu: 000000, rs, rt, rd, 00000, 100001 => rd := rs + rt
             // subu: 000000, rs, rt, rd, 00000, 100011 => rd := rs - rt
@@ -67,6 +68,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // sll:  000000, 00000, rt, rd, shamt, 000000 => rd := rt << shamt
             // srl:  000000, 00000, rt, rd, shamt, 000010 => rd := rt >> shamt
@@ -83,6 +85,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // jr:   000000, rs, 00000 00000, hint, 001000 => PC := rs
             jr:
@@ -97,6 +100,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;
                 signal.realBranch = 1; // actually it's not a branch, but we need to set it to 1 to avoid the hazard
+                signal.special = 0;
             end
             // jalr: 000000, rs, 00000, rd, 00000, 001001 => rd := PC + 8; PC := rs
             jalr:
@@ -111,6 +115,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;
                 signal.realBranch = 1; // actually it's not a branch, but we need to set it to 1 to avoid the hazard
+                signal.special = 0;
             end
             // syscall: 000000, [19:0] code, 001100 => $finish
             syscall:
@@ -125,7 +130,59 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
+            // mult: 000000, rs, rt, 00000, 00000, 011000 => HILO := rs * rt
+            // multu:000000, rs, rt, 00000, 00000, 011001 => HILO := rs * rt (unsigned)
+            // div:  000000, rs, rt, 00000, 00000, 011010 => HILO := rs / rt
+            // divu: 000000, rs, rt, 00000, 00000, 011011 => HILO := rs / rt (unsigned)
+            mult, multu, div, divu:
+            begin
+                signal.regWriteDst = otherDst;
+                signal.regWriteSrc = zeroRegWrite;
+                signal.aluSrc = rtAluSrc;
+                signal.pcSrc = normalPC;
+                signal.aluOp = ALUOp_t'(0);
+                signal.regWriteEnabled = 0;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+                signal.special = 1;
+            end
+            // mfhi: 000000, 00000, 00000, rd, 00000, 010000 => rd := HI
+            // mflo: 000000, 00000, 00000, rd, 00000, 010010 => rd := LO
+            mfhi, mflo:
+            begin
+                signal.regWriteDst = rdDst;
+                signal.regWriteSrc = specialReg;
+                signal.aluSrc = otherAlu;
+                signal.pcSrc = normalPC;
+                signal.aluOp = ALUOp_t'(0);
+                signal.regWriteEnabled = 1;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+                signal.special = 1;
+            end
+            // mthi: 000000, rs, 00000, 00000, 00000, 010001 => HI := rs
+            // mtlo: 000000, rs, 00000, 00000, 00000, 010011 => LO := rs
+            mthi, mtlo:
+            begin
+                signal.regWriteDst = otherDst;
+                signal.regWriteSrc = zeroRegWrite;
+                signal.aluSrc = otherAlu;
+                signal.pcSrc = normalPC;
+                signal.aluOp = ALUOp_t'(0);
+                signal.regWriteEnabled = 0;
+                signal.memReadEnabled = 0;
+                signal.memWriteEnabled = 0;
+                signal.branch = 0;
+                signal.realBranch = 0;
+                signal.special = 1;
+            end
+
             // addi: 001000, rs, rt, 16'imm => rt := rs + signExt(imm)
             addi:
             begin
@@ -139,6 +196,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // addiu: 001001, rs, rt, 16'imm => rt := rs + signExt(imm)
             addiu:
@@ -153,6 +211,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // andi: 001100, rs, rt, 16'imm => rt := rs and zeroExt(imm)
             andi:
@@ -167,6 +226,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // ori:  001101, rs, rt, 16'imm => rt := rs or zeroExt(imm)
             ori:
@@ -181,6 +241,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // xori: 001110, rs, rt, 16'imm => rt := rs xor zeroExt(imm)
             xori:
@@ -195,6 +256,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // slti: 001010, rs, rt, 16'imm => rt := rs < signExt(imm)
             slti:
@@ -209,6 +271,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // sltiu: 001011, rs, rt, 16'imm => rt := unsigned(rs) < unsigned(signExt(imm))
             sltiu:
@@ -223,6 +286,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // lw:   100011, base(rs), rt, offset(imm) => rt := M[base+offset]
             // lb:   100000, base(rs), rt, offset(imm) => rt := M[base+offset]
@@ -241,6 +305,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // sw:   101011, base(rs), rt, offset(imm) => M[base+offset] := rt
             // sb:   101000, base(rs), rt, offset(imm) => M[base+offset] := rt[7:0]
@@ -257,6 +322,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 1;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             // beq:  000100, rs, rt, offset(imm) => if rs=rt then PC = PC + offset
             // bne:  000101, rs, rt, offset(imm) => if rs!=rt then PC = PC + offset
@@ -276,6 +342,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;
                 signal.realBranch = 1;
+                signal.special = 0;
             end
             // lui:  001111, 00000, rt, imm => rt := (imm<<16) | 0
             lui:
@@ -290,6 +357,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             jal:
             // jal:  000011, target  => ($ra := PC + 8;) PC := PC[31:28] | target[25:0] | 2'b00
@@ -304,6 +372,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             j:
             // j:    000010, target  => PC := PC[31:28] | target[25:0] | 2'b00
@@ -318,6 +387,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 1;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
             default:
             begin
@@ -332,6 +402,7 @@ module ControllerUnit(
                 signal.memWriteEnabled = 0;
                 signal.branch = 0;
                 signal.realBranch = 0;
+                signal.special = 0;
             end
         endcase
     end

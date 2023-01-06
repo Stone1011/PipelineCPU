@@ -38,6 +38,7 @@ module WriteBack(
             alu: regWriteData = MEM_WB_Result.aluResult;
             mem: regWriteData = MEM_WB_Result.memReadData;
             nextPC: regWriteData = MEM_WB_Result.pcValue + 8;
+            specialReg: regWriteData = MEM_WB_Result.specialReg;
             default: regWriteData = 0;
         endcase
     end

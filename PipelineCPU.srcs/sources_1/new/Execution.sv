@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 `include "Settings.vh"
+`include "MultiplicationDivisionUnit.sv"
 
 module Execution(
     input SystemSignal system,
@@ -30,7 +31,8 @@ module Execution(
     input Forwarding_t ForwardSignalA,
     input Forwarding_t ForwardSignalB,
 
-    output EX_MEM_Reg EX_MEM_Result
+    output EX_MEM_Reg EX_MEM_Result,
+    output logic busyMDU
     );
 
     int signExtOfImmNumber;
@@ -94,10 +96,43 @@ module Execution(
         .Over(aluOverflow)
     );
 
+    logic startMDU;
+    int dataMDU;
+    mdu_operation_t operationMDU;
+    assign startMDU = ID_EX_Result.signal.special; // Data is ready and it is a special instruction
+    
+    always_comb
+    begin
+        casex(ID_EX_Result.instruction.instructionCode)
+            mult: operationMDU = MDU_START_SIGNED_MUL;
+            multu: operationMDU = MDU_START_UNSIGNED_MUL;
+            div: operationMDU = MDU_START_SIGNED_DIV;
+            divu: operationMDU = MDU_START_UNSIGNED_DIV;
+            mfhi: operationMDU = MDU_READ_HI;
+            mflo: operationMDU = MDU_READ_LO;
+            mthi: operationMDU = MDU_WRITE_HI;
+            mtlo: operationMDU = MDU_WRITE_LO;
+            default: operationMDU = MDU_READ_LO;
+        endcase
+    end
+    
+    MultiplicationDivisionUnit MDU(
+        .reset(system.reset),
+        .clock(system.clock),
+        .operand1(_mdu_int_t'(AluOprandA)),
+        .operand2(_mdu_int_t'(AluOprandB)),
+        .operation(operationMDU),
+        .start(startMDU),
+        .busy(busyMDU),
+        .dataRead(dataMDU)
+    );
+
     always_comb
     begin
         if(aluOverflow)
             $stop;
+//        if(startMDU)
+//            $stop;
     end
 
     always_ff @(posedge system.clock)
@@ -111,6 +146,7 @@ module Execution(
             EX_MEM_Result.aluResult <= 0;
             EX_MEM_Result.aluOverflow <= 0;
             EX_MEM_Result.regReadDataB <= 0;
+            EX_MEM_Result.specialReg <= 0;
         end
         else if(stall)
         begin
@@ -132,6 +168,7 @@ module Execution(
             EX_MEM_Result.aluResult <= aluResult;
             EX_MEM_Result.aluOverflow <= aluOverflow;
             EX_MEM_Result.regReadDataB <= tempAluOprandB;
+            EX_MEM_Result.specialReg <= dataMDU;
         end
     end
 

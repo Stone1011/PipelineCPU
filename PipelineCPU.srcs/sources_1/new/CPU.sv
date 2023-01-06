@@ -21,7 +21,7 @@
 
 `include "Settings.vh"
 
-module CPU(
+module TopLevel(
     input logic clock,
     input logic reset
     );
@@ -45,6 +45,7 @@ module CPU(
 
     logic jump;
     int jumpValue;
+    logic busyMDU;
 
     InstructionFetch IF(
         .system(system),
@@ -77,7 +78,8 @@ module CPU(
         .EX_MEM_Result(EX_MEM_Result),
         .MEM_WB_Result(MEM_WB_Result),
         .ForwardSignalA(ForwardA),
-        .ForwardSignalB(ForwardB)
+        .ForwardSignalB(ForwardB),
+        .busyMDU(busyMDU)
     );
 
     Memory MEM(
@@ -122,6 +124,7 @@ module CPU(
         .ID_EX_Result(ID_EX_Result),
         .IF_ID_Result(IF_ID_Result),
         .stallPeriod(stallPeriod),
+        .busyMDU(busyMDU),
         .stall(stall)
     );
 

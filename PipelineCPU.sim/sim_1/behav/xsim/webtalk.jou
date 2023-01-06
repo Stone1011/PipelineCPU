@@ -2,8 +2,8 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Jan  5 19:06:42 2023
-# Process ID: 6156
+# Start of session at: Fri Jan  6 23:23:49 2023
+# Process ID: 28900
 # Current directory: C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.sim/sim_1/behav/xsim/xsim.dir/mips_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.sim/sim_1/behav/xsim/webtalk.log

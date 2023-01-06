@@ -1,11 +1,11 @@
 `ifndef SETTINGS_VH
 `define SETTINGS_VH
 
-`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\memory-all.txt"
+`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\multi-naive.txt"
 // `define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips10Code\\code\\Ce0.asm.txt"
 
 //`define DEBUG
-`define SHOW_STALLS
+// `define SHOW_STALLS
 
 typedef struct packed 
 {
@@ -67,6 +67,14 @@ typedef enum Vec32
     jr      = 32'b000000_?????_00000_00000_?????_001000, // what is hint?
     jalr    = 32'b000000_?????_00000_?????_?????_001001, 
     syscall = 32'b000000_00000_00000_00000_00000_001100, // what is code?
+    mult    = 32'b000000_?????_?????_00000_00000_011000,
+    multu   = 32'b000000_?????_?????_00000_00000_011001,
+    div     = 32'b000000_?????_?????_00000_00000_011010,
+    divu    = 32'b000000_?????_?????_00000_00000_011011,
+    mfhi    = 32'b000000_00000_00000_?????_00000_010000,
+    mflo    = 32'b000000_00000_00000_?????_00000_010010,
+    mthi    = 32'b000000_?????_00000_00000_00000_010001,
+    mtlo    = 32'b000000_?????_00000_00000_00000_010011,
 
     // codet + rs + rt + 16'imm
     addi    = 32'b001000_?????_?????_????????????????,
@@ -123,13 +131,21 @@ typedef enum Vec2
     normalPC = 2'b11
 } PCSrc_t;
 
-typedef enum Vec2
+typedef enum Vec3
 {  
-    alu = 2'b00,
-    mem = 2'b01,
-    nextPC = 2'b10,
-    zeroRegWrite = 2'b11
+    alu = 3'b000,
+    mem = 3'b001,
+    nextPC = 3'b010,
+    zeroRegWrite = 3'b011,
+    specialReg = 3'b100
 } RegWriteSrc_t;
+
+// typedef enum Vec2
+// {
+//     NON_SPECIAL = 2'b00,
+//     MULT_SPECIAL = 2'b01,
+//     DIV_SPECIAL = 2'b10
+// } Special_t;
 
 typedef struct packed {
     InstructionCode_t instructionCode;
@@ -158,6 +174,7 @@ typedef struct packed {
     PCSrc_t pcSrc;
     ALUOp_t aluOp;
 
+    logic special;
     logic regWriteEnabled;
     logic memReadEnabled;
     logic memWriteEnabled;
@@ -171,6 +188,7 @@ typedef struct packed {
     aluSrc: otherAlu,   \
     pcSrc: normalPC,    \
     aluOp: ADD, \
+    special: 1'b0,   \
     regWriteEnabled: 1'b0,  \
     memReadEnabled: 1'b0,   \
     memWriteEnabled: 1'b0,  \
@@ -202,6 +220,7 @@ typedef struct packed {
     int aluResult;
     logic aluOverflow;
     int regReadDataB;
+    int specialReg;
 } EX_MEM_Reg;
 
 typedef struct packed {
@@ -212,6 +231,7 @@ typedef struct packed {
     int aluResult;
     logic aluOverflow;
     int memReadData;
+    int specialReg;
 } MEM_WB_Reg;
 
 typedef enum Vec2

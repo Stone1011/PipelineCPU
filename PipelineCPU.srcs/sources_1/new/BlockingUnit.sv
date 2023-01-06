@@ -26,6 +26,7 @@ module BlockingUnit(
     input IF_ID_Reg IF_ID_Result,
     input ID_EX_Reg ID_EX_Result,
     input logic stallPeriod,
+    input logic busyMDU,
     
     output logic stall
     );
@@ -77,6 +78,20 @@ module BlockingUnit(
             stallBlock = 1'b0;
     end
 
-    assign stall = stallBlock | stallPeriod;
+    logic stallMDU, lastIsMultDiv;
+    always_comb
+    begin
+        casex(ID_EX_Result.instruction.instructionCode)
+            mult, multu, div, divu: lastIsMultDiv = 1'b1;
+            default: lastIsMultDiv = 1'b0;
+        endcase
+
+        casex(IF_ID_Result.instruction.instructionCode)
+            mfhi, mflo, mult, multu, div, divu, mthi, mtlo: stallMDU = busyMDU | lastIsMultDiv;
+            default: stallMDU = 1'b0;
+        endcase
+    end
+
+    assign stall = stallBlock | stallPeriod | stallMDU;
 
 endmodule
