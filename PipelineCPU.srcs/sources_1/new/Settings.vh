@@ -187,7 +187,7 @@ typedef struct packed {
     regWriteSrc: zeroRegWrite,    \
     aluSrc: otherAlu,   \
     pcSrc: normalPC,    \
-    aluOp: ADDU, \
+    aluOp: UADD, \
     special: 1'b0,   \
     regWriteEnabled: 1'b0,  \
     memReadEnabled: 1'b0,   \
