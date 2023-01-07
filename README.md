@@ -121,7 +121,7 @@ typedef enum Vec2
 
 随后，使用`Mips50TestCodeAns`中的综合测试进行测试，本CPU生成的输出在`MyAns`文件夹中，使用`GNU diff`同标准答案对比后，结果如下图所示。所有的测试点均通过，未与标准答案存在非空格类不同。
 
-![image-20230107203317122](../../AppData/Roaming/Typora/typora-user-images/image-20230107203317122.png)
+![image-20230107203317122](./image-20230107203317122.png)
 
 ## 5  总结与展望
 
