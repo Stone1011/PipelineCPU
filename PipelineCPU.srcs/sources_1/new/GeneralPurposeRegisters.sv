@@ -40,7 +40,7 @@ module GeneralPurposeRegisters(
         for(int i = 0; i < 32; i++)
             GPR[i] <= 0;
     endfunction
-
+    
     initial
     begin
         RESET();
@@ -52,7 +52,6 @@ module GeneralPurposeRegisters(
             RESET();
         else if(writeEnabled && writeNo != 0)
         begin
-            $display("@%h: $%d <= %h", programCounter, writeNo, writeContent);
             GPR[writeNo] <= writeContent;
         end
     end

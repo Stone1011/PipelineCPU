@@ -117,9 +117,14 @@ module ForwardingALU(
             begin
                 if(EX_MEM_Result.signal.regWriteSrc == alu)
                     data = EX_MEM_Result.aluResult;
-                else
-                    // TODO: Need Stall, Processed by BlockingUnit
-                    $stop;
+                else if(EX_MEM_Result.signal.regWriteSrc == nextPC)
+                    data = EX_MEM_Result.pcValue + 8;
+                else if(EX_MEM_Result.signal.regWriteSrc == specialReg)
+                    data = EX_MEM_Result.specialReg;
+//                else
+//                     TODO: Need Stall, Processed by BlockingUnit
+//                    $stop;
+                    
             end
             Forwarding_MEM_WB: 
             begin
@@ -127,6 +132,7 @@ module ForwardingALU(
                     alu: data = MEM_WB_Result.aluResult;
                     mem: data = MEM_WB_Result.memReadData;
                     nextPC: data = MEM_WB_Result.pcValue + 8;
+                    specialReg: data = MEM_WB_Result.specialReg;
                 endcase
             end
         endcase
@@ -161,6 +167,16 @@ module ForwardingBranch(
                     data = EX_MEM_Result.aluResult;
                     stall = 0;
                 end
+                else if(EX_MEM_Result.signal.regWriteSrc == nextPC)
+                begin
+                    data = EX_MEM_Result.pcValue + 8;
+                    stall = 0;
+                end
+                else if(EX_MEM_Result.signal.regWriteSrc == specialReg)
+                begin
+                    data = EX_MEM_Result.specialReg;
+                    stall = 0;
+                end
                 else
                     // $stop;
                     stall = 1; // need to stall for 1 cycle
@@ -181,6 +197,11 @@ module ForwardingBranch(
                     nextPC: 
                     begin
                         data = MEM_WB_Result.pcValue + 8;
+                        stall = 0;
+                    end
+                    specialReg:
+                    begin
+                        data = MEM_WB_Result.specialReg;
                         stall = 0;
                     end
                 endcase

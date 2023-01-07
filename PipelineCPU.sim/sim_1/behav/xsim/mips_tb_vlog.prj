@@ -12,6 +12,7 @@ sv xil_defaultlib  --include "../../../../PipelineCPU.srcs/sources_1/new" \
 "../../../../PipelineCPU.srcs/sources_1/new/InstructionFetch.sv" \
 "../../../../PipelineCPU.srcs/sources_1/new/InstructionMemory.sv" \
 "../../../../PipelineCPU.srcs/sources_1/new/Memory.sv" \
+"../../../../PipelineCPU.srcs/sources_1/new/Printer.sv" \
 "../../../../PipelineCPU.srcs/sources_1/new/ProgramCounter.sv" \
 "../../../../PipelineCPU.srcs/sources_1/new/SignExtendUnit.sv" \
 "../../../../PipelineCPU.srcs/sources_1/new/WriteBack.sv" \

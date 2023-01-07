@@ -47,6 +47,8 @@ module TopLevel(
     int jumpValue;
     logic busyMDU;
 
+    int memWriteInput;
+
     InstructionFetch IF(
         .system(system),
         .jumpValue(jumpValue),
@@ -85,7 +87,8 @@ module TopLevel(
     Memory MEM(
         .system(system),
         .EX_MEM_Result(EX_MEM_Result),
-        .MEM_WB_Result(MEM_WB_Result)
+        .MEM_WB_Result(MEM_WB_Result),
+        .memWriteInput(memWriteInput)
     );
 
     WriteBack WB(
@@ -126,6 +129,19 @@ module TopLevel(
         .stallPeriod(stallPeriod),
         .busyMDU(busyMDU),
         .stall(stall)
+    );
+
+    Printer PU(
+    .system(system),
+    .GPRWriteNo(regWriteDst),
+    .GPRWriteContent(regWriteData),
+    .GPRProgramCounter(MEM_WB_Result.pcValue),
+    .GPRWriteEnabled(regWriteEnabled),
+
+    .address({EX_MEM_Result.aluResult[31:2], 2'b00}),
+    .DMProgramCounter(EX_MEM_Result.pcValue),
+    .DMWriteInput(memWriteInput),
+    .DMWriteEnabled(EX_MEM_Result.signal.memWriteEnabled)
     );
 
 endmodule

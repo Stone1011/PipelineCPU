@@ -40,6 +40,8 @@ module DataMemory(
         for(int i = 0; i < 2048; i++)
             memory[i] <= 0;
     end
+    
+    integer fd;
 
     always_ff @(posedge system.clock) 
     begin
@@ -51,7 +53,6 @@ module DataMemory(
         else if(writeEnabled)
         begin
             memory[address[12:2]] <= writeInput;
-            $display("@%h: *%h <= %h", programCounter, address, writeInput);
         end
     end
 

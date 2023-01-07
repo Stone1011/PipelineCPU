@@ -129,9 +129,11 @@ module Execution(
 
     always_comb
     begin
-        if(aluOverflow)
-            $stop;
+//        if(aluOverflow)
+//            $stop;
 //        if(startMDU)
+//            $stop;
+//        if(ID_EX_Result.pcValue == 32'h3688)
 //            $stop;
     end
 

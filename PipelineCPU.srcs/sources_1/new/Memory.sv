@@ -25,7 +25,8 @@ module Memory(
     input SystemSignal system,
     input EX_MEM_Reg EX_MEM_Result,
 
-    output MEM_WB_Reg MEM_WB_Result
+    output MEM_WB_Reg MEM_WB_Result,
+    output int memWriteInput
     );
 
     function int signExtByte(logic [7:0] b);
@@ -51,7 +52,7 @@ module Memory(
     endfunction
 
     int memReadDataOriginal;
-    int memReadData, memWriteInput;
+    int memReadData;
     DataMemory DM(
         .system(system),
         .address({EX_MEM_Result.aluResult[31:2], 2'b00}), 
