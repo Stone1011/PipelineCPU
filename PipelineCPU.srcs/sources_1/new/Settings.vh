@@ -2,8 +2,8 @@
 `define SETTINGS_VH
 
 // `define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\multi-naive.txt"
-`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips50TestCodeAns\\TestCode\\HexadecimalCode\\88H.asm.txt"
-`define outputPath "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips50TestCodeAns\\MyAns\\88H.asm.txt"
+`define testbench "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips50TestCodeAns\\TestCode\\HexadecimalCode\\0eC.asm.txt"
+`define outputPath "C:\\Users\\19438\\Documents\\GitHub\\PipelineCPU\\testbench\\tests\\Mips50TestCodeAns\\MyAns\\0eC.asm.txt"
 //`define DEBUG
 // `define SHOW_STALLS
 

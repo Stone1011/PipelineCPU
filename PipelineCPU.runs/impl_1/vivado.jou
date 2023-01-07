@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Jan  1 19:27:27 2023
-# Process ID: 20800
+# Start of session at: Sat Jan  7 21:39:29 2023
+# Process ID: 35836
 # Current directory: C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.runs/impl_1
-# Command line: vivado.exe -log CPU.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source CPU.tcl -notrace
-# Log file: C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.runs/impl_1/CPU.vdi
+# Command line: vivado.exe -log TopLevel.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TopLevel.tcl -notrace
+# Log file: C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.runs/impl_1/TopLevel.vdi
 # Journal file: C:/Users/19438/Documents/GitHub/PipelineCPU/PipelineCPU.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source CPU.tcl -notrace
+source TopLevel.tcl -notrace

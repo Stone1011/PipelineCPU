@@ -27,7 +27,6 @@ module Execution(
     input ID_EX_Reg ID_EX_Result,
     input MEM_WB_Reg MEM_WB_Result,
 
-    input logic stall,
     input Forwarding_t ForwardSignalA,
     input Forwarding_t ForwardSignalB,
 
@@ -149,17 +148,6 @@ module Execution(
             EX_MEM_Result.aluOverflow <= 0;
             EX_MEM_Result.regReadDataB <= 0;
             EX_MEM_Result.specialReg <= 0;
-        end
-        else if(stall)
-        begin
-            // EX_MEM_Result.pcValue <= EX_MEM_Result.pcValue;
-            // EX_MEM_Result.instruction <= EX_MEM_Result.instruction;
-            // EX_MEM_Result.signal <= EX_MEM_Result.signal;
-            // EX_MEM_Result.regWrite <= EX_MEM_Result.regWrite;
-            // EX_MEM_Result.aluResult <= EX_MEM_Result.aluResult;
-            // EX_MEM_Result.aluOverflow <= EX_MEM_Result.aluOverflow;
-            // EX_MEM_Result.regReadDataB <= EX_MEM_Result.regReadDataB;
-            EX_MEM_Result <= EX_MEM_Result;
         end
         else
         begin
