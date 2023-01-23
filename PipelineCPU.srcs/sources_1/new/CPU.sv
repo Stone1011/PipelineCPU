@@ -49,7 +49,7 @@ module TopLevel(
 
     int memWriteInput;
 
-    InstructionFetch IF(
+    InstructionFetch IFModule(
         .system(system),
         .jumpValue(jumpValue),
         .jumpEnabled(jump),
